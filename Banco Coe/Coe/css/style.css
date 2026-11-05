@@ -1,0 +1,718 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+/*Header main*/
+header.header-main{
+    width: 100%;
+    padding: 10px 2%;
+    background-color: rgb(153, 47, 47);
+}
+header .header-img{
+    width: 100%;
+    padding: 10px 0;
+}
+.img{
+    background-image: url(../img/logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 80px;
+    margin: 0 auto;
+}
+header .header-menu{
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}
+header .header-menu input[type=search]{
+    margin-left: 290px;
+    width: 390px;
+    padding: 7px 5px;
+    border: 0;
+    border-radius: 50px;
+}
+.header-menu select {
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    background-color: rgb(153, 47, 47);
+    color: #ffffff;
+    border: 0;   
+    padding: 2px 1px;
+}
+.header-menu select option:focus{
+    outline: 0;
+}
+/*Banner-main*/
+section.banner-main{
+    width: 100%;
+    background-image: url(../img/banner-banco.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 450px;
+}
+.declaracao{
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+.w50{
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    width: 50%;
+    line-height: 28px;
+    padding: 20px;
+}
+.w50 p{
+    display:none;
+    transition: 1s;
+}
+.w50 p.mostrar{
+    display:block;
+}
+.w50 h4{
+    font-style: italic;
+    font-weight: lighter;
+}
+.w50 span{
+    font-style: italic;
+    cursor: pointer;
+}
+.w50 h2, span{
+    color: rgb(153, 47, 47);
+}
+.interativa{
+    width: 100%;
+    padding: 20px 2%;
+    background-color: #f2f2f2;
+    display: flex;
+}
+.interativa > .smartphone-interativa{
+    width: 50%;
+    padding: 20px;
+}
+.interativa .smartphone,
+.text-interative .emprestimos,
+.text-interative .fatura,
+.text-interative .cofrinho,
+.text-interative .pix{
+    position: relative;
+    margin: 0 auto;
+    width: 350px;
+    height: 640px;
+    border-radius: 44px;
+    border: 10px solid #111111;
+    background-color: #ffffff;
+    /* moldura metálica + sombra para dar volume */
+    box-shadow:
+        0 0 0 2px #3a3a3c,
+        0 0 0 4px #1c1c1e,
+        0 25px 50px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+/* botões laterais: volume (esquerda) e liga/desliga (direita) */
+.interativa .smartphone::before,
+.text-interative .emprestimos::before,
+.text-interative .fatura::before,
+.text-interative .cofrinho::before,
+.text-interative .pix::before{
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 110px;
+    width: 4px;
+    height: 32px;
+    background-color: #3a3a3c;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 50px 0 #3a3a3c, 0 -40px 0 -1px #3a3a3c;
+}
+.interativa .smartphone::after,
+.text-interative .emprestimos::after,
+.text-interative .fatura::after,
+.text-interative .cofrinho::after,
+.text-interative .pix::after{
+    content: "";
+    position: absolute;
+    right: -16px;
+    top: 150px;
+    width: 4px;
+    height: 70px;
+    background-color: #3a3a3c;
+    border-radius: 0 3px 3px 0;
+}
+/* notch / câmera frontal */
+.notch-smartphone{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 26px;
+    background-color: #111111;
+    border-radius: 0 0 18px 18px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notch-smartphone .camera{
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #3b4a6b, #0a0a12 70%);
+    margin-left: 46px;
+}
+/* barra de status */
+.status-bar{
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    right: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+.status-icones{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.status-icones i{
+    display: inline-block;
+    background-color: #ffffff;
+}
+.status-icones .sinal{
+    width: 16px;
+    height: 10px;
+    clip-path: polygon(0 100%, 0 70%, 25% 70%, 25% 100%, 37% 100%, 37% 45%, 62% 45%, 62% 100%, 75% 100%, 75% 0, 100% 0, 100% 100%);
+}
+.status-icones .wifi{
+    width: 14px;
+    height: 10px;
+    clip-path: polygon(50% 100%, 0 35%, 15% 20%, 50% 0, 85% 20%, 100% 35%);
+    border-radius: 50% 50% 0 0;
+}
+.status-icones .bateria{
+    position: relative;
+    width: 22px;
+    height: 11px;
+    background-color: transparent;
+    border: 1.5px solid #ffffff;
+    border-radius: 4px;
+}
+.status-icones .bateria::before{
+    content: "";
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+    bottom: 1.5px;
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+.status-icones .bateria::after{
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: 2px;
+    width: 2px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 0 2px 2px 0;
+}
+.header-smartphone{
+    padding: 0 12px 8px;
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(153, 47, 47);
+    height: 84px;
+    border-radius: 34px 34px 0 0;
+    z-index: 1;
+}
+.body-smartphone{
+    position: relative;
+    height: 100%;
+    padding-top: 84px;
+    overflow: hidden;
+    border-radius: 34px;
+}
+.footer-smartphone{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 0 0 34px 34px;
+    z-index: 3;
+}
+.footer-smartphone .barra-inicio{
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: #111111;
+    border-radius: 3px;
+}
+.perfil-smartphone{
+    background-image: url(../img/ismael-perfil.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.menu-smartphone{
+    background-image: url(../img/menu.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.menu-displaySmartphone{
+    display: none;
+    height: 100%;
+    width: 200px;
+    padding-top: 40px;
+    background-color: rgb(153, 47, 47);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 34px 18px 18px 34px;
+    z-index: 2;
+}
+.voltar span{
+    padding: 9px;
+    width: 100%;
+    cursor: pointer;
+    color: #ffffff;
+}
+.menu-displaySmartphone ul li{
+    list-style-type: none;
+    width: 100%;
+    padding: 9px;
+    border-radius: 18px;
+    color: #ffffff;
+    list-style-position: inside;
+}
+.menu-displaySmartphone ul li:hover{
+    border-bottom: 1px solid rgb(153, 47, 47);
+}
+.ative{
+    display: block;
+}
+.logo-smartphone{
+    background-image: url(../img/logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 45px;
+}
+.smartphone-image{
+    background-image: url(../img/banner-banco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+}
+.smartphone-opcoes{
+    background-color: rgb(153, 47, 47);
+    width: 100%;
+    padding: 5px 2%;
+}
+.opcoes{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.opcoes-singular{
+    width: calc(100%/4);
+    height: 80px;
+    border: 2px solid rgb(153, 47, 47);
+    background-color: rgb(255, 255, 255);
+    border-radius: 180px;
+    position: relative;
+    cursor: pointer;
+
+}
+.opcoes-singular img{
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    transform: translateX(-35%);
+    transform: translateY(-25%);
+    width: 40px;
+    height: 40px;
+}
+.interativa > .text-interative{
+    position: relative;
+    width: 50%;
+    padding: 20px;
+}
+/*Telas dos apps (painel ao lado do celular)*/
+.text-interative .emprestimos,
+.text-interative .fatura,
+.text-interative .cofrinho,
+.text-interative .pix{
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.conteudo-tela{
+    padding: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222222;
+    height: 100%;
+}
+.titulo-tela{
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+.titulo-tela small{
+    font-weight: normal;
+    opacity: 0.85;
+    margin-right: 4px;
+}
+.tela-destaque{
+    background-color: rgb(153, 47, 47);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+.tela-destaque span{
+    display: block;
+    font-size: 12px;
+    color: #ffffff;
+    opacity: 0.85;
+}
+.tela-destaque strong{
+    display: block;
+    font-size: 26px;
+    margin-top: 4px;
+}
+.tela-lista{
+    list-style: none;
+    margin-bottom: 12px;
+}
+.tela-lista li{
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 2px;
+    font-size: 13px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.tela-lista li b{
+    color: rgb(153, 47, 47);
+}
+.tela-botao{
+    display: block;
+    width: 100%;
+    padding: 11px;
+    text-align: center;
+    background-color: rgb(153, 47, 47);
+    color: #ffffff;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tela-barra{
+    width: 100%;
+    height: 10px;
+    background-color: #e6e6e6;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 8px 0 4px;
+}
+.tela-barra i{
+    display: block;
+    width: 65%;
+    height: 100%;
+    background-color: rgb(153, 47, 47);
+    border-radius: 6px;
+}
+.tela-atalhos{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+.tela-atalhos div{
+    width: 23%;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 11px;
+    background-color: #f2f2f2;
+    border-radius: 14px;
+    color: rgb(153, 47, 47);
+    font-weight: bold;
+}
+.tela-subtitulo{
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 4px;
+}
+.cartao-banco{
+    background-color: #f2f2f2;
+    width: 100%;
+    padding: 10px 2%;
+    display: flex;
+}
+.cartao-single{
+    padding: 10px 2%;
+    width: calc(100%/4);
+    height:calc(100%/4);
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-left: 3px;
+}
+.cartao-single .card{
+    width: 100%;
+    height: 100%;
+}
+.cartaoImagem{
+    width: 250px;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.card .textoCartao{
+    width: 100%;
+    padding: 10px 2%;
+    text-align: justify;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+}
+.cartao-single h2{
+    text-align: center;
+    font-size: 16px;
+}
+.cartao-single p{
+    text-align: justify;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+.cartao-single a{
+    padding: 5px;
+    background-color: rgb(153, 47, 47);
+    color: #f2f2f2;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 16px;
+    text-decoration: none;
+}
+.cartao-credito{
+    width: 100%;
+    padding: 5px 2%;
+    display: flex;
+}
+.cartaoVirado{
+    width: 50%;
+}
+.textoCartao{
+    padding: 10px 2%;
+    width: 50%;
+}
+.textoCartao p{
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+.body-smartphone .textoCartao a{
+    padding: 5px;
+    background-color: rgb(153, 47, 47);
+    color: #f2f2f2;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 16px;
+    text-decoration: none;
+}
+.cartaoVirado-singular{
+    width: calc(80%);
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*Investimentos*/
+.investimentos{
+    background-color: #f2f2f2;
+    border-radius: 18px;
+    width: 100%;
+    padding: 10px 2%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+}
+.investimentos .investimentos-singular{
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.investimentos .textoInvestimentos p{
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+.investimentos .textoInvestimentos a{
+    padding: 5px;
+    background-color: rgb(153, 47, 47);
+    color: #f2f2f2;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 16px;
+    text-decoration: none;
+}
+/*Banco Momentos*/
+.banco_momentos{
+    padding: 10px 2%;
+    
+}
+.banco_momentos .container{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex ;
+}
+.banco_momentos .container .momentos_singular{
+    width: calc(100%/4);
+    height: 450px;
+    border-radius: 36px;
+    margin-left: 15px;
+    transition: 2s linear;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.momentos_singular.expandir{
+    width: 450px !important;
+    height: 100%;
+    background-size: cover;
+    background-position: top;
+
+}
+.banco_momentos .centro_banco {
+    padding: 10px 2%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;       
+}
+
+.banco_momentos .centro_banco .momentos_singular_artigos {
+    width: calc(100%/4 - 10px);
+    max-height: 0;
+    overflow: hidden;  
+    padding: 5px 0;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 0.8s ease;
+    box-sizing: border-box;
+}
+
+.banco_momentos .centro_banco .momentos_singular_artigos.aparecer {
+    max-height: 500px;
+    opacity: 1;
+}
+.banco_momentos .centro_banco .momentos_singular_artigos h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+.banco_momentos .centro_banco .momentos_singular_artigos p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+/*Rodape_Banco*/
+.rodape_banco{
+    width: 100%;
+    padding: 20px 2%;
+    background-color: rgb(50, 50, 50);
+}
+.rodape_banco .rodape_direito{
+    width: 100%;
+    padding: 20px 30px;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+.rodape_direito span{
+    color: #ffffff;
+    font-size: 16px;
+}
+.rodape_banco .container{
+    display: flex;
+    justify-content: space-around;
+}
+.rodape_politicaEmpresa{
+    padding: 20px;
+}
+.rodape_politicaEmpresa h2{
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: rgb(250, 250, 250);
+}
+.rodape_politicaEmpresa ul li{
+    list-style-position: inside;
+    list-style-type: none;
+}
+.rodape_politicaEmpresa ul li a:hover{
+        color: rgb(250, 250, 250);
+        cursor: pointer;
+}
+.rodape_empresa{
+    position: relative;
+    border-top: 1px solid #f2f2f2;
+    width: 100%;
+    padding: 20px 30px;
+}
+.rodape_empresa img{
+    width: 120px;
+    height: 120px;
+}
+.rodape_empresa span{
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+}
